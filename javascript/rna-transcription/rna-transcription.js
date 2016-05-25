@@ -2,14 +2,11 @@ var dnaTranscriber = function(){};
 
 dnaTranscriber.prototype.toRna = function(strand){
   return strand.split('').map(function(nucleotide){
-    if (nucleotide === 'G') {
-      return 'C';
-    } else if (nucleotide === 'C') {
-      return 'G';
-    } else if (nucleotide === 'T') {
-      return 'A';
-    } else if (nucleotide === 'A') {
-      return 'U';
+    switch(nucleotide){
+      case 'G': return 'C'; break;
+			case 'C': return 'G'; break;
+			case 'T': return 'A'; break;
+			case 'A': return 'U'; break;
     }
   }).join('');
 }
